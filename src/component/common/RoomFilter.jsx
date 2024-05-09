@@ -20,7 +20,7 @@ export default function RoomFilter({ data, setFilteredData }) {
   const roomTypes = ['', ...new Set(data.map((room) => room.roomType))];
 
   return (
-    <div className="input-group mb-3">
+    <div className="input-group">
       <span className="input-group-text" id="room-type-filter">
         Filter rooms by type
       </span>

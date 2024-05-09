@@ -6,7 +6,6 @@ export default function RoomPaginator({
   totalPages,
   onPageChange,
 }) {
-  console.log(currentPage);
   const pageNumber = Array.from({ length: totalPages }, (_, i) => i + 1);
   return (
     <nav>

@@ -50,14 +50,14 @@ export async function updateRoom(roomId, roomData) {
   formData.append('roomType', roomData.roomType);
   formData.append('roomPrice', roomData.roomPrice);
   formData.append('photo', roomData.photo);
-  const response = await api.put(`/rooms/update/${roomId}`);
+  const response = await api.put(`/rooms/update/${roomId}`, formData);
   return response;
 }
 
 export async function getRoomById(roomId) {
   try {
     const result = await api.get(`/rooms/room/${roomId}`);
-    return result.data();
+    return result.data;
   } catch (error) {
     throw new Error(`Error fetching room ${error.message}`);
   }
