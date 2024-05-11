@@ -57,6 +57,7 @@ body {
   background-color: rgb(169, 77, 123);
   color: #fff;
 }
+
 .btn-hotel:hover {
   background-color: rgb(137, 127, 132);
   color: #fff;
@@ -79,7 +80,7 @@ body {
 }
 
 .parallax {
-  background-image: url('./assets/images/parrall.jpg');
+  background-image: url('./assets/images/p-3.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
