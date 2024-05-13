@@ -66,7 +66,7 @@ export async function getRoomById(roomId) {
 export async function bookRoom(roomId, booking) {
   try {
     const response = await api.post(
-      ` /bookings/room/${roomId}/booking`,
+      `/bookings/room/${roomId}/booking`,
       booking
     );
     console.log(response);
