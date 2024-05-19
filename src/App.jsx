@@ -10,6 +10,7 @@ import RoomListing from './component/room/RoomListing';
 import Admin from './component/admin/Admin';
 import Checkout from './component/bookings/Checkout';
 import BookingSuccess from './component/bookings/BookingSuccess';
+import Bookings from './component/bookings/Bookings';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +29,7 @@ function App() {
             <Route path="/browse-all-rooms" element={<RoomListing />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/booking-success" element={<BookingSuccess />} />
+            <Route path="/existing-bookings" element={<Bookings />} />
           </Routes>
         </Router>
         <Footer />

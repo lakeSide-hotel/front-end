@@ -6,6 +6,11 @@ body {
   opacity: 0.9;
 }
 
+/* .booking-table > th,
+td {
+  white-space: nowrap;
+  width: auto;
+} */
 /* Navigation bar definitions */
 .navbar {
   padding: 0;
