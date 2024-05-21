@@ -94,6 +94,7 @@ export async function getBookingByConfirmationCode(confirmationCode) {
     const result = await api.get(`/bookings/confirmation/${confirmationCode}`);
     return result.data;
   } catch (error) {
+    console.log(error.message);
     if (error.response && error.response.data) {
       throw new Error(error.response.data);
     } else {
@@ -104,7 +105,7 @@ export async function getBookingByConfirmationCode(confirmationCode) {
 
 export async function cancelBooking(bookingId) {
   try {
-    const result = await api.get(`/bookings/booking/${bookingId}/delete`);
+    const result = await api.delete(`/bookings/booking/${bookingId}/delete`);
     return result.data;
   } catch (error) {
     throw new Error(`Error canceling bookings : ${error.message}`);
