@@ -13,7 +13,7 @@ const FindBooking = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [bookingInfo, setBookingInfo] = useState({
     id: '',
-    room: { id: '' },
+    room: { id: '', roomType: '' },
     bookingConfirmationCode: '',
     roomNumber: '',
     checkInDate: '',
@@ -26,7 +26,7 @@ const FindBooking = () => {
   });
   const clearBookingInfo = {
     id: '',
-    room: { id: '' },
+    room: { id: '', roomType: '' },
     bookingConfirmationCode: '',
     roomNumber: '',
     checkInDate: '',

@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
+import RoomPaginator from '../common/RoomPaginator';
+import RoomCard from '../room/RoomCard';
 
 const RoomSearchResult = ({ results, onClearSearch }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const resultPerPage = 3;
+  const resultsPerPage = 3;
   const totalResults = results.length;
-  const totalPages = Math.ceil(totalResults / resultPerPage);
+  const totalPages = Math.ceil(totalResults / resultsPerPage);
 
   const handlePageChange = (pageNnumber) => {
     setCurrentPage(pageNnumber);
   };
 
-  const startIndex = (currentPage - 1) * resultPerPage;
-  const endIndex = startIndex + resultPerPage;
+  const startIndex = (currentPage - 1) * resultsPerPage;
+  const endIndex = startIndex + resultsPerPage;
   const paginatedResult = results.slice(startIndex, endIndex);
 
   return (
@@ -25,9 +27,26 @@ const RoomSearchResult = ({ results, onClearSearch }) => {
               <RoomCard key={room.id} room={room} />
             ))}
           </Row>
+
+          <Row>
+            {totalResults > resultsPerPage && (
+              <RoomPaginator
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+            )}
+            <Button
+              variant="secondary"
+              onClick={onClearSearch}
+              className="w-100"
+            >
+              Clear Search
+            </Button>
+          </Row>
         </>
       ) : (
-        ''
+        <p></p>
       )}
     </>
   );

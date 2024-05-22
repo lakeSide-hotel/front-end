@@ -175,10 +175,12 @@ const BookingForm = () => {
                         placeholder="check-out date"
                         onChange={handleInputChange}
                       />
+
                       <Form.Control.Feedback type="invalid">
                         Please select a check-out-date
                       </Form.Control.Feedback>
                     </div>
+
                     {errorMessage && (
                       <p className="error-message text-danger">
                         {errorMessage}
